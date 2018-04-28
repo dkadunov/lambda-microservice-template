@@ -25,7 +25,7 @@ module.exports = {
   },
   output: {
     libraryTarget: 'commonjs2',
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist')
   }
 };
