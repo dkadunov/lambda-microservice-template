@@ -1,5 +1,5 @@
 {
-  "name": "lambda-microservice-starter",
+  "name": "lambda-microservice-template",
   "version": "0.0.1",
   "description": "Template for a TS lambda microservice",
   "main": "dist/index.js",
