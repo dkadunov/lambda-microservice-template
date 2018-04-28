@@ -1,3 +1,3 @@
 # lambda-microservice-template
 
-Trying to figure out a simple and lean structure for managing lambdas
+Simple template for a typescript lambda function
