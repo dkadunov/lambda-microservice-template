@@ -4,7 +4,7 @@
   "description": "Template for a TS lambda microservice",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --mode production && cp ./package.json dist && cd dist && npm install --production && zip -r ../lambda-bin.zip ."
+    "build": "rm -rf dist && webpack --mode production && cp ./package.json dist && cd dist && npm install --production && zip -r ../lambda-bin.zip ."
   },
   "author": {
     "name": "Dmitriy Kadunov",
@@ -13,14 +13,12 @@
   "repository": {
     "type": "git"
   },
-  "license": "Apache License",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.3",
-    "@types/aws-sdk": "^2.7.0",
     "@types/node": "^10.0.0",
     "@types/ramda": "^0.25.24",
     "babel-loader": "^7.1.4",
-    "rimraf": "^2.6.2",
     "ts-loader": "^4.2.0",
     "typescript": "^2.8.3",
     "webpack": "^4.6.0",
