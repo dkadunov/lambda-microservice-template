@@ -4,7 +4,10 @@
   "description": "Template for a TS lambda microservice",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist && webpack --mode production && cp ./package.json dist && cd dist && npm install --production && zip -r ../lambda-bin-$(node -p \"require('./package.json').version\").zip ."
+    "build:clean": "rm -rf dist",
+    "build:compile": "webpack --mode production && cp ./package.json dist && cd dist && npm install --production",
+    "build:package": "cd dist && zip -r ../lambda-bin-$(node -p \"require('./package.json').version\").zip .",
+    "build": "npm run build:clean && npm run build:compile && npm run build:package"
   },
   "author": {
     "name": "Dmitriy Kadunov",
