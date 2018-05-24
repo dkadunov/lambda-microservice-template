@@ -1,0 +1,33 @@
+{
+  "name": "lambda-microservice-template",
+  "version": "0.0.1",
+  "description": "Template for a TS lambda microservice",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --mode production && cp ./package.json dist && cd dist && npm install --production && zip -r ../lambda-bin-$(node -p \"require('./package.json').version\").zip ."
+  },
+  "author": {
+    "name": "Dmitriy Kadunov",
+    "email": "dkadunov@gmail.com"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.3",
+    "@types/node": "^10.0.0",
+    "@types/ramda": "^0.25.24",
+    "babel-loader": "^7.1.4",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "aws-lambda": "^0.1.2",
+    "aws-sdk": "^2.229.1",
+    "ramda": "^0.25.0"
+  }
+}
