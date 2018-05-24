@@ -1,4 +1,4 @@
-'user strict'
+"use strict";
 
 import { Callback, Context, Handler } from 'aws-lambda';
 import { pathOr } from 'ramda';
