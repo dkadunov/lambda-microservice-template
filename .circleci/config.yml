@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/lambda
+    
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: 'v1-dependencies-{{ checksum "package.json" }}'
+                    
+      - run: 
+          name: Install dependencies
+          command: npm install --production
+
+      - run:
+          name: Compile TS and build lambda package
+          command: npm run build
+
+      - persist_to_workspace:
+          root: /home/circleci/lambda
+          paths:
+            - lambda-bin.zip
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
