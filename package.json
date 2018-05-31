@@ -1,6 +1,6 @@
 {
   "name": "lambda-microservice-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Template for a TS lambda microservice",
   "main": "dist/index.js",
   "scripts": {
